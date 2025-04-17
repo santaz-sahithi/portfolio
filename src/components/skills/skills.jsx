@@ -1,5 +1,5 @@
 import React from "react";
-import '../qualification/qualification.scss'
+import './skills.scss'
 
 function Designer(props) {
     return <li>{ props.talent }</li>;
@@ -9,7 +9,7 @@ function Coder(props){
     return <li>{props.language}</li>
 }
 
-function Qualification() {
+function Skills() {
     const designers = [
         {id: 1, talent: 'Website & UI Design'},
         {id: 2, talent: 'Figma & Prototyping'},
@@ -23,7 +23,7 @@ function Qualification() {
         {id: 4, language: 'Teaching & Explaining Concepts'}
     ]
   return (
-    <>
+    <section class = "skills">
     <div className="qualification">
         <h2>Part Designer</h2>
         <ul>{designers.map((designer) => <Designer key={designer.id} talent={designer.talent} />)}</ul>  
@@ -32,8 +32,8 @@ function Qualification() {
     <h2>Part Coder</h2>
         <ul>{coders.map((coder) => <Coder key={coder.id} language={coder.language} />)}</ul>  
     </div>
-    </>
+    </section>
   )
 }
 
-export default Qualification
+export default Skills

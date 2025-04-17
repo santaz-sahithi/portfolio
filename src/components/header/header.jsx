@@ -1,32 +1,45 @@
-
 import React, { useState, useEffect, useRef } from 'react';
-import '../header/header.css';
+import '../header/header.scss';
 import { useNavigate } from 'react-router-dom';
 
-function scrollToElement(id, padding = 0) {
-    const element = document.getElementById(id);
-    if (element) {
-        const targetPosition = element.getBoundingClientRect().top + window.scrollY - padding;
-        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-    }
-}
 
-const Navbar = () => {
+const scrollToElement = (id, padding = 0) => {
+    const element = document.getElementById(id);
+    const scrollContainer = document.querySelector('.animation');
+    
+    if (element && scrollContainer) {
+      const targetPosition = element.offsetTop - padding;
+      scrollContainer.scrollTo({ top: targetPosition, behavior: 'smooth' });
+    }
+  };
+  
+
+function Header() {
     const [showMenu, setShowMenu] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
     const contactRef = useRef(null);
     const navigate = useNavigate();
 
-    const handleAboutUsClick = (event) => {
+    useEffect(() => {
+        const scrollContainer = document.querySelector('.animation') || window;
+      
+        const handleScroll = () => {
+          setScrolled(scrollContainer.scrollTop > 1100 || window.scrollY > 1100);
+        };
+      
+        scrollContainer.addEventListener('scroll', handleScroll);
+        handleScroll(); // run once on mount
+      
+        return () => scrollContainer.removeEventListener('scroll', handleScroll);
+      }, []);   
+    
+    const handleprojectsClick = (event) => {
         event.preventDefault();
         navigate('/');
         // Scroll after navigation to homepage
         setTimeout(() => {
-            scrollToElement('AboutUsSection', 50);
+            scrollToElement('Projects', 50);
         }, 100); // Small delay to ensure navigation is completed
-    };
-
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
     };
 
     const handleClick = (event) => {
@@ -42,35 +55,35 @@ const Navbar = () => {
         };
     }, []);
 
+    const toggleMenu = () => {
+        setShowMenu(!showMenu);
+    };
+
     return (
-        <div className="navbar_header">
-            <div className="navbar_logo">
-                <img src={logo} alt="logo" />
+        
+        <section className={`navbar_header ${scrolled ? 'scrolled' : ''}`}>
+            <div class="navbar_logo" >
+                <svg viewBox="0 0 100 100" class="navbar-logo-circle">
+                    <circle cx="50" cy="50" r="40" stroke="#a6c8e9" stroke-width="4" fill="none"/>
+                    <text x="45%" y="68%" text-anchor="middle" fill="#a6c8e9" font-size="3rem"   font-family="Cedarville Cursive"  >S</text>
+                </svg>
             </div>
+
             <nav ref={contactRef}>
                 <ul className={showMenu ? 'menu show' : 'menu'}>
                     <li className='navbar_li'><a className="anchor_a" href="/Home">Home</a></li>
-                    <li className='navbar_li'><a className="anchor_a" href="/countries">Countries</a></li>
-                    <li className='navbar_li'><a className="anchor_a" href="/Services">Services</a></li>
-                    <li className='navbar_li'><a className="anchor_a" href="/OurTeam"  onClick={handleAboutUsClick}>About Us</a></li>
-                    <li className='navbar_li'><a className="anchor_a" href="/ContactUs">Contact Us</a></li>
+                    <li className='navbar_li'><a className="anchor_a" href="/Projects" onClick={handleprojectsClick}>Projects</a></li>
+                    <li className='navbar_li'><a className="anchor_a" href="/Contact">Contact</a></li>
                 </ul>
                 <div className="menu-toggle" onClick={toggleMenu}>
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
-                <div className="social-icons">
-                    <a className='ss_i' href="https://wa.link/10di5m">
-                        <img src={whatsappIcon} alt="WhatsApp" />
-                    </a>
-                    <a className='ss_i' href="tel:7593969629">
-                        <img src={callIcon} alt="Caller" />
-                    </a>
-                </div>
             </nav>
-        </div>
+            {/* <p style={{ color: 'white' }}>{scrolled ? "SCROLLED" : "TOP"}</p> */}
+        </section>
     );
 };
 
-export default Navbar;
+export default Header;

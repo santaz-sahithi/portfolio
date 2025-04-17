@@ -15,7 +15,6 @@
       background-size: 100% 100%;
       width: 100%;
       position: fixed;
-      overflow-y: hidden;
   }
   .animation_layer.parallax {
       position: fixed;
@@ -23,35 +22,26 @@
   
   #bluesky {
     width: 100%;
-    top: -12vh;
-    margin-bottom:50vh ;
-    height:120vh;
-    background-repeat: no-repeat;
-    background-image: url(../../assets//hero-background2.jpg);
+    background-image: url(../../assets//bg-3.jpg);
   }
   
   #trees {
-    // height: 130vh;
     width: 100%;
-    top: -10vh;
+    top: -15vh;
     background-image: url(../../assets//trees.png);
     background-position: center;
     background-repeat: no-repeat;
   }
 
- #thunder {
-    height: 90vh;
-    width: 100%;
-    top: 110vh;
-    background-size:contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    // background-image: url(../../assets/thunder3.png);
-    background-image: linear-gradient(to bottom, black 15%, #002c51 70%, );
-  }
+
+#hero-line{
+  font-size: 4rem;
+  padding: 0;
+  margin: 0;
+}
 
 .hero-text{
-    margin-top: 35vh;
+    margin-top: 30vh;
     margin-left: 10%;
     color: #87CEEB;
     width: 50%;
@@ -65,7 +55,8 @@
   }
 
   #hero-heading {
-    font-size: 2rem;
+    margin-top: 0;
+    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 15px;
   }
@@ -73,6 +64,6 @@
   #hero-para {
     font-weight: 500;
     width: 70%;
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 

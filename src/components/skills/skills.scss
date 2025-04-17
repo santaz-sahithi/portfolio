@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 
+.skills{
+    height: 95vh;
+    width: 100%;
+    margin-top: -20vh;
+    background-image: linear-gradient(to bottom, black 15%, #002c51 70%, );
+}
+
 .qualification{
-    margin-top: 140vh;
     margin-left: 8%;
     font-size: 1.2rem;
     color: #87CEEB;
