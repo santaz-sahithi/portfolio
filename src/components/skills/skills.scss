@@ -1,23 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 
 .skills{
+    // position: relative;
+    // margin-top: 500px;
+    padding-top: 10vh;
     height: 95vh;
     width: 100%;
-    margin-top: -20vh;
+    margin-top: -30vh;
+    justify-content: space-between;
     background-image: linear-gradient(to bottom, black 15%, #002c51 70%, );
 }
 
 .qualification{
-    margin-left: 8%;
+    // position: absolute;
+    margin-left: 10%;
     font-size: 1.2rem;
     color: #87CEEB;
   }
 
 .languages{
-    margin-top: 20vh;
-    margin-left: 70%;
+    position: absolute;
+    right: 10%;
     font-size: 1.2rem;
     color: #87CEEB;
+    padding-left: 10%;
   }
 
 .qualification h2{

@@ -1,14 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 
 
-.animation, .animation_layer {
-	height: 130vh;
-}
-
-.animation {
-      display: block;
-      position: relative;
-      z-index: 10;
+  .animation, .animation_layer {
+    height: 120vh;
+  }
+  
+  .animation{
+    overflow-y: scroll;
+    scrollbar-width:none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */  
+    &::-webkit-scrollbar {
+      display:none; /* Chrome, Safari */
+    }
   }
   
   .animation_layer {
@@ -21,21 +24,26 @@
   }
   
   #bluesky {
-    width: 100%;
-    background-image: url(../../assets//bg-3.jpg);
+    height: 120vh;
+    width: 100vw;
+    top: -18%;
+    background-image: url(../../assets//hero-background1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
   
   #trees {
     width: 100%;
-    top: -15vh;
+    top: -12%;
     background-image: url(../../assets//trees.png);
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
   }
 
 
 #hero-line{
-  font-size: 4rem;
   padding: 0;
   margin: 0;
 }
@@ -45,25 +53,27 @@
     margin-left: 10%;
     color: #87CEEB;
     width: 50%;
+    font-size: clamp(1.5rem, -0.429rem + 3.81vw, 2rem);
 }
 
   #hero-about {
     font-family: "Cedarville Cursive";
     font-style: italic;
     margin: 0;
-    font-size: 5rem;
+    font-size: clamp(1.5rem, -0.429rem + 3.81vw, 5rem);
+
   }
 
   #hero-heading {
     margin-top: 0;
-    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 15px;
-  }
+    font-size: clamp(1.5rem, -0.429rem + 3.81vw, 2.5rem);
+ }
 
   #hero-para {
     font-weight: 500;
     width: 70%;
-    font-size: 1.1rem;
+    font-size: clamp(1rem, -0.429rem + 2.81vw, 1.2rem);
   }
 

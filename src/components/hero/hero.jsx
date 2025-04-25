@@ -1,14 +1,60 @@
-import "../hero/hero.scss";
-import {Parallax, ParallaxLayer} from '@react-spring/parallax'
+import { Parallax, ParallaxLayer } from '@react-spring/parallax';
+import { useRef, useState, useEffect } from 'react';
+import Header from "../header/header.jsx";
 import Skills from "../skills/skills.jsx";
 import Projects from "../projects/projects";
+import Contact from '../contact/contact.jsx';
+import "../hero/hero.scss";
 
 
 function Hero() {
+  const parallaxRef = useRef();
+    const scrollContainerRef = useRef();
+    const [scrolled, setScrolled] = useState(false);
+    const [parallaxPages, setParallaxPages] = useState(7); // Default number of pages
+    const scrollThreshold = 100;
+
+    useEffect(() => {
+        const container = scrollContainerRef.current;
+        if (!container) return;
+
+        const onScroll = () => {
+            setScrolled(container.scrollTop > scrollThreshold);
+        };
+
+        container.addEventListener('scroll', onScroll);
+        onScroll();
+
+        return () => container.removeEventListener('scroll', onScroll);
+    }, [scrollThreshold]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 768) {
+                setParallaxPages(10); // Example: Reduce pages for smaller screens
+            } else if (window.innerWidth < 1200) {
+                setParallaxPages(10); // Example: Medium screen size
+            } else {
+                setParallaxPages(10); // Example: Larger screens
+            }
+        };
+
+        // Initial call to set pages based on initial viewport width
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []); 
   return (
     <>
-      <div className="hero-parallax">
-        <Parallax pages={4} style={{ top: '0', left: '0' }} class="animation">
+      <Header parallaxRef={parallaxRef} scrolled = {scrolled} />
+      <div className="hero-parallax" ref = {scrollContainerRef}>
+        <Parallax ref={parallaxRef} pages = {parallaxPages} style={{top: '0', left: '0' }} class="animation">
           <ParallaxLayer offset={0} speed={0}>
             <div class="animation_layer parallax" id="bluesky"></div>
           </ParallaxLayer>
@@ -22,16 +68,15 @@ function Hero() {
                   <h3 id = 'hero-para'>I enjoy learning new things every day, as it keeps life exciting and never boring. My other passions would be helping in NGO, playing badminton.</h3>
               </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={1} speed={0.3}>
-              <Skills />          
-          </ParallaxLayer>
-          <ParallaxLayer offset={1.85} speed = {0.3}>
-            <Projects/>   
+          <ParallaxLayer offset={1} speed={0.2}>
+            <Skills />          
+            <Projects />
+            <Contact />
           </ParallaxLayer>
         </Parallax>
       </div>
     </>
   );
-};
+}
 
 export default Hero;

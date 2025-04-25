@@ -2,7 +2,7 @@
 
 .navbar_header {
     top: 0;
-    position: fixed;
+    position: sticky;
     width: 100%;
     display: flex;
     left: 0px;
@@ -10,7 +10,7 @@
     align-items: center;
     background-color: #002d513d;
     transition: background-color 1.5s ease, box-shadow 0.3s ease;
-    z-index: 15;
+    z-index: 10000;
     gap: 30vw;
     height: 74px;
   }
@@ -18,17 +18,38 @@
   .navbar_header.scrolled {
     background-color: #995725;
   }
-  
-
+ 
   .navbar-logo-circle{
-    margin: 10px 5px 5px 5px;
+    margin: 5px 5px 0px 5px;
   }
   
   .navbar_logo {
     width: 120px;
-    height: 80px;
+    height: 75px;
     font-family: 'Cedarville Cursive';
     margin-left: 0px;
+  }
+
+  .circle-svg {
+    stroke: #a6c8e9;
+    stroke-width: 4;
+    fill: none;
+    transition: all 0.3s ease;
+  
+    &.scrolled {
+      stroke: #ffffff; // change this color as you like
+    }
+  }
+  
+  .circle-text {
+    fill: #a6c8e9;
+    font-size: 3rem;
+    font-family: 'Cedarville Cursive', cursive;
+    transition: all 0.3s ease;
+  
+    &.scrolled {
+      fill: #ffffff; // change this color on scroll
+    }
   }
   
   
@@ -44,6 +65,7 @@
     align-items: center;
     gap: 2vw;
     padding: 0vw;
+    margin-left: 5vw;
   }
     
   
@@ -54,7 +76,6 @@
     padding:  1vw ;
   }
   
-  
   .menu .navbar_li .anchor_a {
     text-decoration: none;
     color: #87CEEB;
@@ -63,12 +84,18 @@
     padding: 8px;
     white-space: nowrap;
     transition: background-color 0.3s ease;
+
+    &.scrolled{
+    color: #ffffff;
+  }
   }
   
   .menu .navbar_li .anchor_a:hover {
     background-color: #002c51;
     border-radius: 5px;
   }
+
+  
   
   /* Toggle Button Styling */
   .menu-toggle {
@@ -87,28 +114,18 @@
 
   
   /* Responsive Styling */
-  @media screen and (max-width: 800px) {
-    nav{
-      margin-right: 0;
-      align-items: center;
-      align-self: center;
-      justify-content: center;
-    }
+  @media screen and (max-width: 700px) {
+
     .navbar_header{
       gap: 0;
       flex-direction: column;
       align-items:flex-start;
     }
-  
-    .navbar_logo {
-      position:relative;
+
+    .navbar_logo{
+      width: 80px;
     }
-    
-    .navbar_logo img {
-      width: 90px;
-      height: auto;
-    }
-    
+
     /* Display the toggle button for smaller screens */
     .menu-toggle {
       display: block;
