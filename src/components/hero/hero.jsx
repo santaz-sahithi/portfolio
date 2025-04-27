@@ -11,7 +11,7 @@ function Hero() {
   const parallaxRef = useRef();
     const scrollContainerRef = useRef();
     const [scrolled, setScrolled] = useState(false);
-    const [parallaxPages, setParallaxPages] = useState(1.3); // Default number of pages
+    const [parallaxPages, setParallaxPages] = useState(4); // Default number of pages
     const scrollThreshold = 100;
 
     useEffect(() => {
@@ -68,7 +68,7 @@ function Hero() {
                   <h3 id = 'hero-para'>I enjoy learning new things every day, as it keeps life exciting and never boring. My other passions would be helping in NGO, playing badminton.</h3>
               </div>
           </ParallaxLayer>
-          {/* <ParallaxLayer offset={1} speed={0.2}>
+          <ParallaxLayer offset={1} speed={0.2}>
             <Skills />          
           </ParallaxLayer>
           <ParallaxLayer offset={1.8} pages = {1.5} speed={0.2}>
@@ -76,9 +76,9 @@ function Hero() {
           </ParallaxLayer>
           <ParallaxLayer offset={3.3} speed={0.2}>
             <Contact />
-          </ParallaxLayer> */}
+          </ParallaxLayer> 
         </Parallax>
-        <Skills />
+        {/* <Skills /> */}
       </div>
     </>
   );
