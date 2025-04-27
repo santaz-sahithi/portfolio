@@ -12,11 +12,11 @@ body {
 
 #project-heading {
     color: #FF923E;
-    font-size: clamp(1rem, 2rem, 4rem);
-    // font-family: "Cedarville Cursive";
+    font-size: clamp(1.5rem, -0.429rem + 3.81vw, 4rem);
+    font-family: "Cedarville Cursive";
     font-weight: 800px;
     margin-left: 5vw;
-    margin-bottom: 7vh;
+    margin-bottom: 1vh;
 }
 
 .card {
@@ -25,9 +25,12 @@ body {
     transition: transform .3s; /* Animation */
     background-color: #ffffff;
     border-radius: 15px;
-    margin: 5% auto;
+    margin: 2% auto;    
 }
 
+.card-spacing{
+    margin: 20px;
+}
 
 .card img{
     background-size:contain;
@@ -37,9 +40,10 @@ body {
     border-radius: 10%;
 }
 
+
 .card h2{
     color: #FF923E;
-    margin: 0.5vh 0 1vh 1.5vh;
+    margin: 0.5vh 0 1vh 0vh;
     font-size: clamp(1.5rem, 5vm, 4rem);
 }
 
@@ -48,16 +52,16 @@ body {
     color: rgb(255, 255, 255);
     background-color: grey;
     border-radius: 20vh;
-    padding: 2px 7px;
+    padding: 2px 8px;
     font-size: 0.8rem;
-    margin-left: 1.7vw;
     font-weight: 500;
+    margin-right: 10px;
 }
 
 .card p{
     color: black;
     width: 20vw;
-    padding: 0 25px;
+    padding: 0;
     height: 10vh;
     font-size: clamp(1.2rem, 5vm, 4rem);
 }
@@ -75,6 +79,7 @@ body {
     display: inline-block;
     text-align: center;
     transition: background-color 0.3s ease;
+    bottom: 3%;
   }
   
   
@@ -188,7 +193,6 @@ body {
 
     .card p{
         width: auto; /* Adjust paragraph width */
-        padding: 0 15px;
         height: auto; /* Adjust height */
         flex-grow: 1;
     }
@@ -197,10 +201,10 @@ body {
         width: 60%; /* Adjust button width */
         font-size: 1rem;
         padding: 10px 15px;
-        margin: 2vh auto; /* Center the button */
         display: block; /* Make it a block-level element */
         text-align: center;
         margin: 15px auto 10px auto; /* Adjust top and bottom margins */
+        margin: 4vh auto;
     }
 
     .symbols {

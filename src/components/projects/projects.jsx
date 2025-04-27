@@ -15,19 +15,22 @@ function projects() {
     <section className = "project-grid">
         <div className='card'> 
             <img src = {Novimg} alt = "Novaluna Website IMG"/>
-            <h2>Novaluna Technologies</h2>
-            <>
-                <span>Javascript</span>
-                <span>CSS</span>
-                <span>HTML</span>
-            </>
-            <p>Collaborated on the development and design of the Novaluna Technologies website.</p>
-            <a href="https://www.novalunatech.com/" target="_blank" rel="noopener noreferrer" className="live-view-btn">
-                Live View
-            </a>
+            <div className='card-spacing'>
+                <h2>Novaluna Technologies</h2>
+                <>
+                    <span>Javascript</span>
+                    <span>CSS</span>
+                    <span>HTML</span>
+                </>
+                <p>Collaborated on the development and design of the Novaluna Technologies website.</p>
+                <a href="https://www.novalunatech.com/" target="_blank" rel="noopener noreferrer" className="live-view-btn">
+                    Live View
+                </a>
+            </div>
         </div>
         <div className='card'> 
             <img src = {Eleximg} alt = "Elexport Website Image"/>
+            <div className='card-spacing'>
             <h2>Elexport Overseas</h2>
             <>
                 <span>Javascript</span>
@@ -38,9 +41,11 @@ function projects() {
             <a href="https://www.elexportoverseas.com/" target="_blank" rel="noopener noreferrer" className="live-view-btn">
                 Live View
             </a>
+            </div>
         </div>
         <div className='card'> 
             <img src = {Novimg} alt = "Novaluna Website IMG"/>
+            <div className='card-spacing'>
             <h2>Portfolio April 2025</h2>
             <>
                 <span>Javascript</span>
@@ -49,6 +54,7 @@ function projects() {
             </>
             <p>My portfolio website, you're probably looking at right now.</p>
             <a className='live-view-btn' > Stay up to Date</a>
+            </div>
         </div>
     </section>
     <div className='symbols'>

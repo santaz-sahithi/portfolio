@@ -6,6 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Projects from './components/projects/projects.jsx';
 import Skills from './components/skills/skills.jsx';
 
+
 function App() {
   useEffect(() => {
     document.title = 'Portfolio';
@@ -13,10 +14,13 @@ function App() {
   
   return (
     <div className='App'>
-      <Routes>
+      {/* <Routes>
         <Route index element={<Home />} />
         <Route path = '/Home' element = {<Home />}/>
-      </Routes>
+      </Routes> */}
+      <Home />
+      <Skills />  
+      <Projects />
     </div>
   );
 }

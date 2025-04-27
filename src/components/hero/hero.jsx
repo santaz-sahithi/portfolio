@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import Header from "../header/header.jsx";
 import Skills from "../skills/skills.jsx";
 import Projects from "../projects/projects";
-import Contact from '../contact/contact.jsx';
+import Contact from '../contactfold/contactfold.jsx';
 import "../hero/hero.scss";
 
 
@@ -11,7 +11,7 @@ function Hero() {
   const parallaxRef = useRef();
     const scrollContainerRef = useRef();
     const [scrolled, setScrolled] = useState(false);
-    const [parallaxPages, setParallaxPages] = useState(7); // Default number of pages
+    const [parallaxPages, setParallaxPages] = useState(1.3); // Default number of pages
     const scrollThreshold = 100;
 
     useEffect(() => {
@@ -31,11 +31,11 @@ function Hero() {
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 768) {
-                setParallaxPages(10); // Example: Reduce pages for smaller screens
+                setParallaxPages(4); // Example: Reduce pages for smaller screens
             } else if (window.innerWidth < 1200) {
-                setParallaxPages(10); // Example: Medium screen size
+                setParallaxPages(4); // Example: Medium screen size
             } else {
-                setParallaxPages(10); // Example: Larger screens
+                setParallaxPages(4); // Example: Larger screens
             }
         };
 
@@ -68,12 +68,17 @@ function Hero() {
                   <h3 id = 'hero-para'>I enjoy learning new things every day, as it keeps life exciting and never boring. My other passions would be helping in NGO, playing badminton.</h3>
               </div>
           </ParallaxLayer>
-          <ParallaxLayer offset={1} speed={0.2}>
+          {/* <ParallaxLayer offset={1} speed={0.2}>
             <Skills />          
-            <Projects />
-            <Contact />
           </ParallaxLayer>
+          <ParallaxLayer offset={1.8} pages = {1.5} speed={0.2}>
+            <Projects />
+          </ParallaxLayer>
+          <ParallaxLayer offset={3.3} speed={0.2}>
+            <Contact />
+          </ParallaxLayer> */}
         </Parallax>
+        <Skills />
       </div>
     </>
   );
