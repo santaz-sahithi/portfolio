@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
 
 
-  // body{
-  //   height: 120vh;
-  //   color: black;
-  // }
+  .black-bg{
+    height: 78vh;
+  }
 
   .animation, .animation_layer {
-    height: 120vh;
+    height: 110vh;
   }
   
   .animation{
@@ -29,9 +28,10 @@
   }
   
   #bluesky {
-    height: 120vh;
     width: 100vw;
-    top: -18%;
+    height: 110vh;
+    position: fixed;
+    z-index: -1;
     background-image: url(../../assets//hero-background1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -40,8 +40,8 @@
   
   #trees {
     width: 100%;
-    top: -12%;
-    background-image: url(../../assets//trees.png);
+    // top: 30%;
+    background-image: url(../../assets//tress-very-long-DONOT-delete.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -82,3 +82,14 @@
     font-size: clamp(1rem, -0.429rem + 2.81vw, 1.2rem);
   }
 
+
+  @media screen and (max-width:700px) {
+    .hero-text{
+      width: 90%;
+
+      #hero-about{
+        font-size: 3rem;
+        margin-bottom: 3vh;
+      }
+    }
+  }

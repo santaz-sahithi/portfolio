@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Projects from './components/projects/projects.jsx';
 import Skills from './components/skills/skills.jsx';
+import ContactForm from './components/contactfold/contactfold.jsx';
 
 
 function App() {
@@ -14,13 +15,10 @@ function App() {
   
   return (
     <div className='App'>
-      {/* <Routes>
-        <Route index element={<Home />} />
-        <Route path = '/Home' element = {<Home />}/>
-      </Routes> */}
       <Home />
       <Skills />  
       <Projects />
+      <ContactForm />
     </div>
   );
 }

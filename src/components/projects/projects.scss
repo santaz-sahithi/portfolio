@@ -2,7 +2,6 @@
 
 body {
     background-color: #f3efe7;
-    // background-image: linear-gradient(to bottom, #002c51,);
 }
 
 .project-grid {
@@ -12,7 +11,7 @@ body {
 
 #project-heading {
     color: #FF923E;
-    font-size: clamp(1.5rem, -0.429rem + 3.81vw, 4rem);
+    font-size: clamp(2.5rem, -0.429rem + 3.81vw, 4rem);
     font-family: "Cedarville Cursive";
     font-weight: 800px;
     margin-left: 5vw;
@@ -22,10 +21,10 @@ body {
 .card {
     width: 25vw;
     height: 80vh;
-    transition: transform .3s; /* Animation */
+    transition: transform .3s;
     background-color: #ffffff;
     border-radius: 15px;
-    margin: 2% auto;    
+    margin: 2% auto;
 }
 
 .card-spacing{
@@ -74,26 +73,25 @@ body {
     font-size: 1.2rem;
     padding: 12px 24px;
     border-radius: 10px;
-    margin: 3vh 3vw;
+    margin: auto 2vw;
     text-decoration: none;
     display: inline-block;
     text-align: center;
     transition: background-color 0.3s ease;
     bottom: 3%;
   }
-  
-  
+
+
   .live-view-btn:hover {
     background-color: #d97f2f;
     color: white;
     text-decoration: underline;
   }
-  
+
 .symbols{
     display: flex;
     flex-direction: row;
     margin: 10vh 0px;
-    // margin: auto;
     justify-content: center;
     gap: 2vw;
 }
@@ -122,12 +120,12 @@ body {
     font-weight: 800;
     margin-top: 0;
     padding: 0;
-    
+
 }
 
 .beyond-code {
-    color: black;   
-    justify-items: center; 
+    color: black;
+    justify-items: center;
     text-align: center;
     width: 60vw;
     margin: 20vh auto;
@@ -147,8 +145,8 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 .beyond-code p{
-    color: black;   
-    justify-items: center; 
+    color: black;
+    justify-items: center;
     text-align: center;
     width: 50vw;
     margin: auto;
@@ -170,109 +168,79 @@ body {
   transition: background-position .7s, background-size .5s ease-in-out;
 }
 
-
-
 @media screen and (max-width: 1000px) {
     .project-grid {
-        display: grid; /* Use CSS Grid */
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Create responsive columns */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .card {
-        width: auto;
+        width: 80%;
         height: auto;
-        margin: 5% 10%;
+        margin: 20px 0;
+        box-sizing: border-box;
     }
 
     .card img {
-        width: 95%; /* Make images responsive within the card */
+        width: 95%;
         height: auto;
         padding: 10px;
         border-radius: 10%;
+        display: block;
+        margin: 0 auto;
     }
 
     .card p{
-        width: auto; /* Adjust paragraph width */
-        height: auto; /* Adjust height */
+        width: 90%;
+        height: auto;
         flex-grow: 1;
+        margin: 10px auto;
+        text-align: center;
     }
 
     .live-view-btn {
-        width: 60%; /* Adjust button width */
+        width: 60%;
         font-size: 1rem;
         padding: 10px 15px;
-        display: block; /* Make it a block-level element */
+        display: block;
         text-align: center;
-        margin: 15px auto 10px auto; /* Adjust top and bottom margins */
-        margin: 4vh auto;
+        // margin: 20px auto 10px auto;
+        margin: auto;
     }
 
     .symbols {
         flex-direction: row;
-        margin: 5vh 0; /* Adjust margin */
+        margin: 5vh 0;
         gap: 5vw;
-        justify-content: space-around; /* Distribute symbols evenly */
+        justify-content: space-around;
     }
 
     .symbols img {
-        width: 20vw; /* Adjust symbol width */
+        width: 20vw;
         height: auto;
     }
 
     #reactimgshit {
-        width: 15vw; /* Adjust React image width */
+        width: 15vw;
         height: auto;
         margin-top: 1vh;
     }
 
     .beyond-code {
-        width: 90vw; /* Adjust width */
+        width: 90vw;
         font-size: 1rem;
-        height: auto; /* Adjust height */
+        height: auto;
         padding: 15px;
+        margin: 5vh 0;
+        text-align: center;
     }
 
     .beyond-code p {
-        width: 80vw; /* Adjust paragraph width */
+        width: 80vw;
         font-size: 1rem;
         padding: 10px;
+        text-align: center;
+        margin: 0 auto;
     }
 }
-
-// @property --angle{
-//     syntax: "<angle>";
-//     initial-value: 0deg;
-//     inherits: false;
-// }
-
-// .project-grid::after, .project-grid::before{
-//     content: '';
-//     position: absolute;
-//     height: 100%;
-//     width: 100%;
-//     background-image: conic-gradient(from var(--angle), transparent 50%, orange);
-//     top: 50%;
-//     left: 50%;
-//     translate: -50% -50%;
-//     z-index: -1;
-//     padding: 5px;
-//     border-radius: 15px;
-//     animation: 3s spin linear infinite;
-// }
-
-// .project-grid::before{
-//     filter: blur(1.5rem);
-//     opacity: 0.2;
-// }
-
-
-// @keyframes spin{
-//     from{
-//         --angle:0deg
-//     }
-//     to{
-//         --angle:360deg
-//     }
-// }
-
-

@@ -2,11 +2,11 @@
 
 .skills{
     // position: relative;
-    // top: 15%;
+    // top: -15%;
     padding-top: 10vh;
     height: 95vh;
     width: 100%;
-    margin-top: -30vh;
+    margin-top: 10vh;
     justify-content: space-between;
     background-image: linear-gradient(to bottom, black 15%, #002c51 70%, );
 }
@@ -19,7 +19,7 @@
   }
 
 .languages{
-    // position: absolute;
+    position: absolute;
     right: 10%;
     font-size: 1.2rem;
     color: #87CEEB;

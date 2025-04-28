@@ -11,7 +11,7 @@
     background-color: #002d513d;
     transition: background-color 1.5s ease, box-shadow 0.3s ease;
     z-index: 10000;
-    gap: 30vw;
+    gap: 25vw;
     height: 74px;
   }
 
@@ -87,12 +87,18 @@
 
     &.scrolled{
     color: #ffffff;
-  }
+    }
   }
   
   .menu .navbar_li .anchor_a:hover {
     background-color: #002c51;
     border-radius: 5px;
+
+    &.scrolled{
+      // background-color: rgb(255, 255, 255);
+      background-color: #ddd;
+      color: rgb(0, 0, 0);
+    }
   }
 
   
@@ -141,10 +147,11 @@
       display: none;
       flex-direction: column;
       position: relative;
-      /* top: 60px; */
+      top: -4vh;
       left:0;
       width: 100%;
-      background-color: #292626;
+      // background-color: #292626;
+      background-color: #002c51;
       font-size: 24px;
       z-index: 999;
       gap: 0;

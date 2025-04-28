@@ -7,47 +7,50 @@ import { useNavigate } from 'react-router-dom';
     const [scrolled, setScrolled] = useState(false);
     const contactRef = useRef(null);
     const navigate = useNavigate();
-
-    useEffect(() => {
-        const scrollContainer = document.querySelector('.animation') || window;
       
-        const handleScroll = () => {
-          setScrolled(scrollContainer.scrollTop > 1100 || window.scrollY > 1100);
+        useEffect(() => {
+          const handleScroll = () => {
+            setScrolled(window.scrollY > 1100); // Only window scroll
+          };
+      
+          window.addEventListener('scroll', handleScroll);
+          handleScroll(); // run once
+      
+          return () => window.removeEventListener('scroll', handleScroll);
+        }, []);
+      
+        const handleProjectsClick = (event) => {
+          event.preventDefault();
+          const projectSection = document.getElementById('project-heading');
+          if (projectSection) {
+            projectSection.scrollIntoView({ behavior: 'smooth' });
+          }
         };
-      
-        scrollContainer.addEventListener('scroll', handleScroll);
-        handleScroll(); // run once on mount
-      
-        return () => scrollContainer.removeEventListener('scroll', handleScroll);
-      }, []);
-      
-    
-    const handleprojectsClick = (event) => {
-        event.preventDefault();
-        navigate('/'); // go to home
-        setTimeout(() => {
-            if (parallaxRef?.current) {
-              parallaxRef.current.scrollTo(1.65); // ← matches offset of <Projects />
+
+        const handleContactClick = (event) => {
+            event.preventDefault();
+            const projectSection = document.getElementById('contact-fold');
+            if (projectSection) {
+              projectSection.scrollIntoView({ behavior: 'smooth' });
             }
-          }, 200);
-      };
-
-    const handleClick = (event) => {
-        if (contactRef.current && !contactRef.current.contains(event.target)) {
+          };
+      
+        const handleClickOutside = (event) => {
+          if (contactRef.current && !contactRef.current.contains(event.target)) {
             setShowMenu(false);
-        }
-    };
-
-    useEffect(() => {
-        document.addEventListener('mousedown', handleClick);
-        return () => {
-            document.removeEventListener('mousedown', handleClick);
+          }
         };
-    }, []);
-
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
-    };
+      
+        useEffect(() => {
+          document.addEventListener('mousedown', handleClickOutside);
+          return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+          };
+        }, []);
+      
+        const toggleMenu = () => {
+          setShowMenu(!showMenu);
+        };
 
     return (
         
@@ -61,9 +64,9 @@ import { useNavigate } from 'react-router-dom';
 
             <nav ref={contactRef}>
                 <ul className={showMenu ? 'menu show' : 'menu'}>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}> <a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="/Home">Home</a></li>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Projects" onClick={handleprojectsClick}>Projects</a></li>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="/Contact">Contact</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="/Home">Home</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Projects" onClick={handleProjectsClick}>Projects</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="/Contact" onClick={handleContactClick}>Contact</a></li>
                 </ul>
                 <div className="menu-toggle" onClick={toggleMenu}>
                     <span></span>

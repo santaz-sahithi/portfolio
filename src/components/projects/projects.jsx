@@ -2,9 +2,9 @@ import React from 'react'
 import "../projects/projects.scss"
 import Novimg from "../../assets/novaluna.png"
 import Eleximg from "../../assets/elexport pic.png"
-import HTML5 from "../../assets/HTML5.svg"
-import CSS from "../../assets/CSS.svg"
-import JS from "../../assets/Javascript.png"
+import HTML5 from "../../assets/HTML2.svg"
+import CSS from "../../assets/css3.svg"
+import JS from "../../assets/js.svg"
 import Rimg from "../../assets/react2.svg"
 
 function projects() {
@@ -61,10 +61,8 @@ function projects() {
         <img src = {HTML5} alt = "HTML5"/>
         <img src = {CSS} alt = "CSS"/>
         <img src = {JS} alt = "Javascript"/>
-        <a className='name-logo'>
-            <h7>Reactjs</h7> 
-            <span><img id = "reactimgshit" src = {Rimg} alt = "React"/></span>
-         </a>
+        <img src = {Rimg} alt = "React"/>
+        
     </div>
     <div className='beyond-code'>
         <h1>Beyond Code</h1>
