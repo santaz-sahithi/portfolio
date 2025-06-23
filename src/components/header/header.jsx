@@ -64,9 +64,9 @@ import { useNavigate } from 'react-router-dom';
 
             <nav ref={contactRef}>
                 <ul className={showMenu ? 'menu show' : 'menu'}>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="/Home">Home</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Home">Home</a></li>
                     <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Projects" onClick={handleProjectsClick}>Projects</a></li>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="/Contact" onClick={handleContactClick}>Contact</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Contact" onClick={handleContactClick}>Contact</a></li>
                 </ul>
                 <div className="menu-toggle" onClick={toggleMenu}>
                     <span></span>

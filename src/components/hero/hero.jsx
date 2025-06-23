@@ -22,8 +22,8 @@ function Hero() {
           <ParallaxLayer offset={0} speed = {0.3}>
               <div className="hero-text">
                   <h1 id = 'hero-line'>| <span id = 'hero-about'> about</span> |</h1>
-                  <h2 id = 'hero-heading'>I am a Software Developer based in Bangalore,India.</h2>
-                  <h3 id = 'hero-para'>I enjoy learning new things every day, as it keeps life exciting and never boring. My other passions would be helping in NGO, playing badminton.</h3>
+                  <h2 id = 'hero-heading'>Hey, I’m Santaz — I turn messy ideas into polished web experiences.</h2>
+                  <h3 id = 'hero-para'>I design and develop responsive, user-friendly websites. Whether you’re a brand, a cause, or a creative, I help bring your ideas online. Fast, functional, and made to represent your vision.</h3>
               </div>
           </ParallaxLayer>
         </Parallax>

@@ -24,20 +24,26 @@ const ContactForm = () => {
         </p>
         <div className="workik-contact-bigbox">
           <div className="workik-contact-box">
+            <a href="https://wa.me/+919573424443" class="contact_form_link">
             <div className="info-item text-box">
               <img src={call} alt="Phone Icon" className="icon contact-svg" />
               <p className="contact-text">+91-95</p>
               <p className="contact-text">7-342-</p>
               <p className="contact-text">4443</p>
             </div>
+            </a>
+            <a href = "mailto:santazsahithi@gmaill.com" class="contact_form_link">
             <div className="info-item text-box">
               <img src={emailIcon} alt="Email Icon" className="icon contact-svg" />
-              <p className="contact-text">santazsahithi@gmail.com</p>
+              <p className="contact-text" >santazsahithi@gmail.com</p>
             </div>
+            </a>
+            <a href='https://www.google.com/maps/place/HSR+Layout,+Bengaluru,+Karnataka/' class ='contact_form_link'>
             <div className="info-item text-box">
               <img src={location} alt="Location Icon" className="icon contact-svg" />
               <p className="contact-text">South Bangalore, Karnataka</p>
             </div>
+            </a>
           </div>
           <div className="social-media-links">
             <a href="https://www.linkedin.com/in/santaz-sahithi-7534951b7/"><img src={linkedin} alt="Linkedin" className="social-svg" /></a>
