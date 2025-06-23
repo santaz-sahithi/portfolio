@@ -1,15 +1,23 @@
 import './App.scss';
-import Hero from './components/hero/hero.jsx';
-import Header from "./components/header/header.jsx";
+import Home from './components/hero/hero.jsx';
+import { useEffect } from 'react';
+import Projects from './components/projects/projects.jsx';
+import Skills from './components/skills/skills.jsx';
+import ContactForm from './components/contactfold/contactfold.jsx';
+
 
 function App() {
+  useEffect(() => {
+    document.title = 'Portfolio';
+      }, []);
+  
   return (
-    <>
-      <div>
-      {/* <Header /> */}
-      <Hero />
-      </div>
-    </>
+    <div className='App'>
+      <Home />
+      <Skills />  
+      <Projects />
+      <ContactForm />
+    </div>
   );
 }
 
