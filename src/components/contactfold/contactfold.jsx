@@ -10,13 +10,11 @@ import github from '../../assets/github2.svg';
 import call from '../../assets/call.svg';
 import location from '../../assets/location.svg';
 import Resume from '../../assets/Resume2.svg';
+import myImg from '../../assets/Portfolio_pic.jpeg';
 
 const ContactForm = () => {
   return (
     <div id = 'contact-fold' className="contact-form-container "> {/* Added green-theme class */}
-      <div>
-        {/* <img src = {myimg}/> */}
-      </div>
       <div className="contact-info-section">
         <h2>Lets get in touch</h2>
         <p className="sub-text">
@@ -50,6 +48,9 @@ const ContactForm = () => {
             <a href="https://github.com/santaz-sahithi"><img src={github} alt="Github" className="social-svg" /></a>
           </div> 
         </div>
+      </div>
+      <div className='portfolio_img_div'>
+        <img src={myImg} alt="My Picture" className='my_img'/>
       </div>
     </div>
   );
