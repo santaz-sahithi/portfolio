@@ -1,19 +1,21 @@
 .contact-form-container {
     max-width: 60vw; 
     margin: 10vh auto;
-    padding: 5vh 0;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;    height: 50vh;
+    display: flex;
+    flex-direction: row;
+    padding: 5vh 3vw;
+    gap: 5vw;
+    height: 100%;
+    box-shadow: rgba(207, 66, 66, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;    height: 50vh;
 }
 a.contact_form_link{
   text-decoration: none;
 }
   .contact-info-section {
-      flex: 0.5;
-      padding: 0 5vw;
+      width: 70%;
       border-left: 1px solid #eee;
-    //   height: 10vh;
+      height: fit-content;
 
-  
       h2 {
         margin-top: 0;
         margin-bottom: 15px;
@@ -40,18 +42,40 @@ a.contact_form_link{
           opacity: 0.7;
         }
       }
-  }
-
-  .social-media-links{
+      .social-media-links{
       margin-top: 2vw;
       margin-left: 1vw;
-    a {
-      margin-right: 2vw;
-    }
+        a {
+          margin-right: 2vw;
+        }
+      }
   }
+
+.portfolio_img_div{
+  width: 40%;
+}
+
+.portfolio_img_div img{
+  height: 100%;
+  width: 100%;
+
+}
 
 @media screen and (max-width:700px) {
   .contact-form-container{
     max-width: 85%;
+    flex-direction: column;
+    height: 100%;
   }
+  .portfolio_img_div{
+  width: 100%;
+  }
+
+  .portfolio_img_div img{
+    height: 100%;
+    width: 100%;
+
+  }
+
+
 }
