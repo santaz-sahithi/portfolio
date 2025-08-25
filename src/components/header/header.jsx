@@ -34,6 +34,14 @@ import { useNavigate } from 'react-router-dom';
               projectSection.scrollIntoView({ behavior: 'smooth' });
             }
           };
+
+        const handleHomeClick = (event) => {
+            event.preventDefault();
+            const projectSection = document.getElementById('hero-click');
+            if (projectSection) {
+              projectSection.scrollIntoView({ behavior: 'smooth' });
+            }
+          };
       
         const handleClickOutside = (event) => {
           if (contactRef.current && !contactRef.current.contains(event.target)) {
@@ -64,9 +72,10 @@ import { useNavigate } from 'react-router-dom';
 
             <nav ref={contactRef}>
                 <ul className={showMenu ? 'menu show' : 'menu'}>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Home">Home</a></li>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Projects" onClick={handleProjectsClick}>Projects</a></li>
-                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="#Contact" onClick={handleContactClick}>Contact</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="Home" onClick={handleHomeClick}>Home</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="Projects" onClick={handleProjectsClick}>Projects</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="Contact" onClick={handleContactClick}>Contact</a></li>
+                    <li className={`navbar_li ${scrolled ? 'scrolled' : ''}`}><a className={`anchor_a ${scrolled ? 'scrolled' : ''}`} href="https://santaz-sahithi.github.io/Resume_Santaz_Sahithi.pdf">Resume</a></li>
                 </ul>
                 <div className="menu-toggle" onClick={toggleMenu}>
                     <span></span>

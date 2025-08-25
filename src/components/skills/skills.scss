@@ -1,38 +1,218 @@
 @import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
 
-.skills{
-    // position: relative;
-    // top: -50%;
-    padding-top: 10vh;
-    height: 95vh;
-    width: 100%;
-    margin-top: -7vh;
-    justify-content: space-between;
-    background-image: linear-gradient(to bottom, black 15%, #002c51 70%, );
+.skills {
+  margin-top: -5vh;
+  padding: 10vh 5vw;
+  min-height: 100vh;
+  // width: fit-co;
+  // background-color: black;
+  background: linear-gradient(to bottom, black 15%, #002c51 70%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.qualification{
-    // position: absolute;
-    margin-left: 10%;
-    font-size: 1.2rem;
-    color: #87CEEB;
-  }
+.bento-grid {
+  // margin-top: -25vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 80%;
+  height: 80vh;
+}
 
-.languages{
+.bento-box {
+  background: linear-gradient(135deg, #0D264A 25%, rgba(13, 38, 74, 0.25) 100%);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
     position: absolute;
-    right: 10%;
-    font-size: 1.2rem;
-    color: #87CEEB;
-    padding-left: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
 
-.qualification h2{
-  font-family: "Cedarville cursive";
-  font-size: 3rem;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
 }
 
+// Content boxes styling
+.bento-box.content {
+  color: #ffffff;
+  
+  h2 {
+    font-family: "Cedarville Cursive", cursive;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #87CEEB;
+    font-weight: 400;
+  }
 
-.languages h2{
-  font-family: "Cedarville cursive";
-  font-size: 3rem;
+  h3 {
+    // font-family: "Cedarville Cursive", cursive;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #87CEEB;
+    font-weight: 400;
+    // margin-top: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #e0e0e0;
+    line-height: 1.6;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #87CEEB;
+      font-weight: bold;
+    }
+  }
+}
+
+// Placeholder boxes styling
+.bento-box.placeholder {
+  background: linear-gradient(135deg, #0D264A 0%, rgba(13, 38, 74, 0.25) 100%);
+  border: 2px dashed rgba(135, 206, 235, 0.3);
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(135, 206, 235, 0.2);
+    border-radius: 50%;
+  }
+}
+
+// Size variations
+.bento-box.large-tall {
+  grid-row: span 2;
+  min-height: 250px;
+}
+
+.bento-box.large-wide {
+  grid-column: span 1;
+  min-height: 150px;
+}
+
+.bento-box.medium-wide {
+  min-height: 100px;
+}
+
+.bento-box.medium {
+  min-height: 130px;  
+}
+
+.bento-box.small-narrow {
+  min-height: 70px;
+}
+
+.bento-box.bottom-spanning {
+  grid-column: 2 / 4;
+  grid-row: 3 / 4;
+  min-height: 150px;
+  
+  h3 {
+    line-height: 1.6;
+    color: #e0e0e0;
+    font-weight: 400;
+    // font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+}
+
+// Typing cursor animation
+.cursor {
+  animation: blink 1s infinite;
+  color: #87CEEB;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    height: auto;
+  }
+
+  .bento-box {
+    padding: 1.5rem;
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    min-height: auto;
+  }
+
+  .bento-box.content h2 {
+    font-size: 2rem;
+  }
+
+  .bento-box.content li {
+    font-size: 1rem;
+  }
+
+  .bento-box.bottom-spanning {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    padding: 5vh 3vw;
+  }
+
+  .bento-box {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .bento-box.content h2 {
+    font-size: 1.8rem;
+  }
 }

@@ -8,14 +8,15 @@ import Skills from '../skills/skills.jsx';
 function Hero() {
   const parallaxRef = useRef();
   return (
-    <div class = 'what' >
+    <>
       <Header parallaxRef={parallaxRef} />
-      <div className='black-bg'></div>
-        <Parallax ref={parallaxRef}  pages={1.2} style={{top: '0', left: '0' }} class="animation">
-          {/* <ParallaxLayer offset={0} speed={0}>
+      <div class = 'what' id = 'hero-click' >
+        <div className='black-bg'></div>
+          <Parallax ref={parallaxRef}  pages={1.2} style={{top: '0', left: '0' }} class="animation">
+          <ParallaxLayer offset={0} speed={0.1}>
             <div class="animation_layer parallax" id = "bluesky"></div>
-          </ParallaxLayer> */}
-          <ParallaxLayer offset={0.25} speed={0.1}>
+          </ParallaxLayer>
+          <ParallaxLayer offset={0.2} speed={0.25}>
             <div class="animation_layer parallax" id="trees"></div>
           </ParallaxLayer>
           <ParallaxLayer offset={0} speed = {0.1}>
@@ -39,6 +40,7 @@ function Hero() {
           </ParallaxLayer>
         </Parallax>
       </div>
+    </>
   );
 }
 

@@ -3,12 +3,14 @@
 
 
 .what{
-    background-image: url(../../assets//hero-bg2.jpg);
+    // background-image: url(../../assets//hero-bg2.jpg);
     z-index: -1;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: fit-content;
+    // height: fit-content;
+    height: 90vh;
+    padding-top: 74px; /* Add padding to account for fixed header */
 }
 
   .black-bg{
@@ -16,12 +18,15 @@
   }
 
   .animation, .animation_layer {
-    margin-top: -1vh;
-    height: 100vh;
+    // margin-top: -1vh;
+    // margin-bottom: -20vh;
+    // padding-top: 6vh;
+    height: 110vh;
   }
   
   .animation{
-    overflow-y: scroll;
+    // overflow-y: scroll;
+    overflow-y: visible;
     scrollbar-width:none; /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */  
     &::-webkit-scrollbar {
@@ -36,26 +41,36 @@
   }
   .animation_layer.parallax {
       position: fixed;
+      overflow-y: visible;
   }
   
-  // #bluesky {
-  //   width: 100vw;
-  //   height: 130vh;
-  //   // height: fit-content;
-  //   position: fixed;
-  //   background-image: url(../../assets//hero-bg2.jpg);
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-position: center;
-  // }
+
+
+
+  #bluesky {
+    // top: -10vh;
+    width: 100vw;
+    height: 120vh;
+    // height: fit-content;
+    position: fixed;
+    background-image: url(../../assets//hero-bg2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
   
   #trees {
     width: 100%;
-    top: -2%;
+    height: 100vh;
+    margin-top: 5vh;
     background-image: url(../../assets//trees-long2.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-y: visible;
+    position: fixed;
+    // z-index: 9999;
+    pointer-events: none;
   }
 
 
